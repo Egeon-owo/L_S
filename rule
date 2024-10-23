@@ -27,11 +27,11 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 [Remote Filter]
 Proxy= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
-HK= NameKeyword, FilterKey=.*(港|HK|(?i)Hong)
-TW= NameKeyword, FilterKey=.*(台|TW|(?i)Taiwan)
-SG= NameKeyword, FilterKey=.*(新|狮|獅|SG|(?i)Singapore)
-US= NameKeyword, FilterKey=.*(美|US|(?i)States|American)
-JP= NameKeyword, FilterKey=.*(日|JP|(?i)Japan)
+HK= NameKeyword, FilterKey=.*(香港|Hong Kong|HK|hk)
+TW= NameKeyword, FilterKey= .*(台湾|Taiwan|TW|tw|台北)
+SG= NameKeyword, FilterKey=.*(新加坡|Singapore|SG|sg)
+US= NameKeyword, FilterKey=.*(日本|Japan|JP|jp)
+JP= NameKeyword, FilterKey=.*(美国|United States|US|us)
 [Proxy Group]
 Eee= select,Proxies,Auto, US, HK, JP, TW, SG
 Proxies= select,Proxy
