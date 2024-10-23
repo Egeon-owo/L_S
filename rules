@@ -27,14 +27,13 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 [Remote Filter]
 Proxies= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
-HK=url-test,全球手动,fec405e5e08e0ac1,全球节点,url = http://detectportal.firefox.com/success.txt,interval = 5,tolerance = 1
-TW=url-test, FilterKey=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+HK= url-test,全球手动,fec405e5e08e0ac1,全球节点,url = http://detectportal.firefox.com/success.txt,interval = 5,tolerance = 1
+TW= url-test, FilterKey=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 [Proxy Group]
-## 策略组
-Eee=select,Proxies,Auto, US, HK, JP, TW, SG
-static=Proxies, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
+Eee= select,Proxies,Auto, US, HK, JP, TW, SG
+static= Proxies, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
 ## 将分流规则传递过来的网络请求进行分发
-url-latency-benchmark=Auto, server-tag-regex=.*, check-interval=600, tolerance=5,alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
+Auto=url-test, FilterKey=.*, check-interval=600, tolerance=5,alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
 # 服务器按地区分组策略
 url-latency-benchmark=HK, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 url-latency-benchmark=TW, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
