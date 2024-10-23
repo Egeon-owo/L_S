@@ -53,7 +53,7 @@ Proxies= select,Proxy
 Auto=url-test, Proxy,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png
 HK=url-test, 香港,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 SG=url-test, 新加坡,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-TW=url-test, 台湾,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+TW=url-test, 台湾,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
 US=url-test, 美国,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 JP=url-test, 日本,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 GlobalMedia=select,Eee, US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
