@@ -1,0 +1,134 @@
+[General]
+ip-mode = ipv4-only
+dns-server = system
+sni-sniffing = true
+disable-stun = false
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+interface-mode = auto
+test-timeout = 5
+disconnect-on-policy-change = false
+switch-node-after-failure-times = 3
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://detectportal.firefox.com/success.txt
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb
+ipasn-url = https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+
+[Proxy]
+
+[Remote Proxy]
+
+[Remote Filter]
+全球节点 = NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
+
+[Proxy Group]
+## 策略组
+static=Eee,Proxies,Auto, US, HK, JP, TW, SG
+static=Proxies, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
+## 将分流规则传递过来的网络请求进行分发
+url-latency-benchmark=Auto, server-tag-regex=.*, check-interval=600, tolerance=5,alive-checking=false, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
+# 服务器按地区分组策略
+url-latency-benchmark=HK, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+url-latency-benchmark=TW, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+url-latency-benchmark=JP, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=600, tolerance=5,alive-checking=false, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+url-latency-benchmark=SG, server-tag-regex=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|兰|美)).)*$, check-interval=600, tolerance=5, alive-checking=false,img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+url-latency-benchmark=US, server-tag-regex=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, check-interval=600, tolerance=5, alive-checking=false,img-url=https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+# GlobalMedia策略
+static=GlobalMedia,Eee, US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
+# 国外媒体细分策略
+# > Youtibe策略
+static=YouTube,Eee, US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Youtube.png
+# > Netflix策略
+static=Netflix, Eee,US, HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Netflix.png
+# > Disney+策略
+static=Disney+,Eee, US, HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Disney+.png
+# > HBO策略
+static=HBO, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/HBO.png
+# > TikTok策略
+static=TikTok,  Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Tiktok.png
+# > Spotify策略
+static=Spotify, Eee,US,  HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Spotify.png
+# 国内媒体细分策略
+# > BiliBili策略
+static=BiliBili, HK, TW, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Bilibili.png
+# 软件&服务策略
+# > Telegram策略
+static=Telegram, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Telegram.png
+# > OpenAI策略
+static=OpenAI,Eee, US, HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/OpenAI.png
+# > Twitter策略
+static=Twitter, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Twitter.png
+# > PayPal策略
+static=PayPal, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Paypal.png
+# > Google策略
+static=Google, Eee,US,  HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Google.png
+# > Microsoft策略
+static=Microsoft, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Microsoft.png
+
+[Rule]
+Local Rule
+Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR,IP-CIDR6,IP-ASN
+Strategy:DIRECT,Proxy,REJECT
+Options:no-resolve(no-resolve(only for cidr))
+IP-CIDR, 192.168.0.0/16, DIRECT
+IP-CIDR, 10.0.0.0/8, DIRECT
+IP-CIDR, 172.16.0.0/12, DIRECT
+IP-CIDR, 127.0.0.0/8, DIRECT
+GEOIP, cn, DIRECT
+FINAL,Eee
+
+[Remote Rule]
+https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list, tag=直连修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf, tag=广告终结者, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/EAlyce/conf/main/Rule/FQNovelAdvertising.list, tag=番茄去广告, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=微信直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=Netflix 规则, force-policy=Netflix, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list, tag=Disney, force-policy=Disney+, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/HBO/HBO.list, tag=HBO, force-policy=HBO, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify 规则, force-policy=Spotify, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX//YouTube/YouTube.list, tag=YouTube 规则, force-policy=YouTube, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list, tag=GlobalMedia 规则, force-policy=GlobalMedia, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram 规则, force-policy=Telegram, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=OpenAI 规则, force-policy=OpenAI, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/PayPal/PayPal.list, tag=PayPal 规则, force-policy=PayPal, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list, tag=Microsoft 规则, force-policy=Microsoft, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitter/Twitter.list, tag=Twitter规则, force-policy=Twitter, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=Google规则, force-policy=Google, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=Bilibili, force-policy=BiliBili, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, tag=国内网站, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+
+
+[Host]
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://kelee.one/Tool/Loon/Plugin/LoonGallery.plugin, policy=Eee, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Block_HTTPDNS.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Remove_ads_by_keli.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/QuickSearch.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Prevent_DNS_Leaks.plugin, policy=Eee, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/TestFlightRegionUnlock.plugin, policy=DIRECT, enabled=true
+https://kelee.one/Tool/Loon/Plugin/BoxJs.plugin, policy=Eee, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Sub-Store.plugin, policy=Eee, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Script-Hub.plugin, policy=Eee, enabled=true
+
+[Mitm]
+hostname =
+ca-p12 = 
+ca-passphrase = 
+skip-server-cert-verify = false
