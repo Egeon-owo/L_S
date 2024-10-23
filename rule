@@ -1,25 +1,40 @@
 [General]
-ip-mode = ipv4-only
-dns-server = system
-sni-sniffing = true
-disable-stun = false
-dns-reject-mode = LoopbackIP
-domain-reject-mode = DNS
-udp-fallback-mode = REJECT
-wifi-access-http-port = 7222
-wifi-access-socks5-port = 7221
-allow-wifi-access = false
-interface-mode = auto
+# 解析器
+resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/sub-store-parser.loon.min.js
+#代理测速
+proxy-test-url = http://www.gstatic.com/generate_204
+#测速超时 (s)
 test-timeout = 5
-disconnect-on-policy-change = false
+# IPv6 支持
+ipv6 = false
+# GeoIP 数据库
+geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
+# DNS
+dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
+# DoH
+doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+# 跳过代理
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
+# 旁路隧道
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
+# 允许 Wi-Fi 访问
+allow-udp-proxy = true
+allow-wifi-access = false
+wifi-access-http-port = 5208
+wifi-access-socks5-port = 5206
+# 将dns请求发往目标dns服务器
+real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, *.apple.com, *apple.com, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+# 接口模式
+interface-mode = auto
+# 失败后切换节点次数
 switch-node-after-failure-times = 3
-internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
-proxy-test-url = http://detectportal.firefox.com/success.txt
-resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
-geoip-url = https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb
-ipasn-url = https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+# 策略切换时关闭链接
+disconnect-on-policy-change = true
+# udp端口禁用
+disable-stun = true
+disable-udp-ports = 443
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
+# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
 
 [Proxy]
 
@@ -72,22 +87,7 @@ Microsoft=select, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.
 
 [Rule]
 # 本地规则
-# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
-
-DOMAIN-KEYWORD,announce,DIRECT
-DOMAIN-KEYWORD,torrent,DIRECT
-DOMAIN-KEYWORD,tracker,DIRECT
-DOMAIN-SUFFIX,smtp,DIRECT
-URL-REGEX,(Subject|HELO|SMTP),DIRECT
-
-DOMAIN-SUFFIX,local,DIRECT
-IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
-IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-geoip,cn,DIRECT
+GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule]
@@ -111,27 +111,26 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, tag=Twitter规则, policy=Twitter, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, tag=Google规则, policy=Google, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, tag=Bilibili, policy=BiliBili, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, tag=国内网站, policy=DIRECT, update-interval=172800, opt-parser=true, enabled=true
-
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
 
 [Host]
 
 [Rewrite]
 
 [Script]
-
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/check.js, timeout=300, tag=流媒体-解锁查询, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
 [Plugin]
-https://kelee.one/Tool/Loon/Plugin/LoonGallery.plugin, policy=Eee, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Block_HTTPDNS.plugin, enabled=true
-https://kelee.one/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Remove_ads_by_keli.plugin, enabled=true
-https://kelee.one/Tool/Loon/Plugin/QuickSearch.plugin, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Prevent_DNS_Leaks.plugin, policy=Eee, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
-https://kelee.one/Tool/Loon/Plugin/TestFlightRegionUnlock.plugin, policy=DIRECT, enabled=true
-https://kelee.one/Tool/Loon/Plugin/BoxJs.plugin, policy=Eee, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Sub-Store.plugin, policy=Eee, enabled=true
-https://kelee.one/Tool/Loon/Plugin/Script-Hub.plugin, policy=Eee, enabled=true
+https://raw.githubusercontent.com/erdongchanyo/Rules/refs/heads/main/Loon/EDCstore.plugin, enabled=true
+https://github.com/VirgilClyne/iRingo/raw/main/plugin/Siri.plugin, enabled=true
+https://github.com/VirgilClyne/iRingo/raw/main/plugin/Location.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, tag=哔哩去广告, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Zhihu_remove_ads.plugin, tag=知乎去广告, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=REJECT, tag=Advertising (blackmatrix7, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=Redirect (blackmatrix7, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=Auto-HK, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, policy=Auto-HK, tag=Sub-Store, enabled=true
 
 [Mitm]
 hostname =
