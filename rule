@@ -27,20 +27,20 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 [Remote Filter]
 Proxy= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
-HK= NameKeyword, FilterKey=.*(香港|Hong Kong|HK|hk)
-TW= NameKeyword, FilterKey= .*(台湾|Taiwan|TW|tw|台北)
-SG= NameKeyword, FilterKey=.*(新加坡|Singapore|SG|sg)
-US= NameKeyword, FilterKey=.*(日本|Japan|JP|jp)
-JP= NameKeyword, FilterKey=.*(美国|United States|US|us)
+香港= NameKeyword, FilterKey=.*(香港|Hong Kong|HK|hk)
+台湾= NameKeyword, FilterKey= .*(台湾|Taiwan|TW|tw|台北)
+新加坡= NameKeyword, FilterKey=.*(新加坡|Singapore|SG|sg)
+日本= NameKeyword, FilterKey=.*(日本|Japan|JP|jp)
+美国= NameKeyword, FilterKey=.*(美国|United States|US|us)
 [Proxy Group]
 Eee= select,Proxies,Auto, US, HK, JP, TW, SG
 Proxies= select,Proxy
 Auto=url-test, Proxy,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png
-HK=url-test, HK,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-SG=url-test, SG,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-TW=url-test, TW,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-US=url-test, US,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-JP=url-test, JP,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+HK=url-test, 香港,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+SG=url-test, 新加坡,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+TW=url-test, 台湾,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+US=url-test, 美国,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+JP=url-test, 日本,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 GlobalMedia=select,Eee, US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
 YouTube=select,Eee, US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Youtube.png
 # > Netflix策略
