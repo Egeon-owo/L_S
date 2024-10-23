@@ -26,7 +26,7 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Remote Proxy]
 
 [Remote Filter]
-Proxies= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
+Proxy= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
 HK= NameKeyword, FilterKey=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$
 TW= NameKeyword, FilterKey=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
 SG= NameKeyword, FilterKey=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|兰|美)).)*$
@@ -34,7 +34,7 @@ US= NameKeyword, FilterKey=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|�
 JP= NameKeyword, FilterKey=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$
 [Proxy Group]
 Eee= select,Proxies,Auto, US, HK, JP, TW, SG
-Proxies= select,Proxies
+Proxies= select,Proxy
 Auto=url-test, Proxies,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png
 HK=url-test, Proxies,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5 ,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 SG=url-test, Proxies,url = http://www.gstatic.com/generate_204,interval = 300,tolerance = 5,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
@@ -91,12 +91,12 @@ geoip,cn,DIRECT
 FINAL,Eee
 
 [Remote Rule]
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list, tag=直连修正,policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list, tag=直连修正,policy=DIRECT, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list, tag=广告拦截, policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, policy=DIRECT,, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf, tag=广告终结者, policy=reject, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/EAlyce/conf/main/Rule/FQNovelAdvertising.list, tag=番茄去广告,policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, tag=微信直连, policy=direct, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, tag=微信直连, policy=DIRECT, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, tag=Netflix 规则, policy=Netflix, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, tag=Disney, policy=Disney+, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/Loon/HBO/HBO.list, tag=HBO, policy=HBO, update-interval=172800, opt-parser=true, enabled=true
@@ -111,7 +111,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, tag=Twitter规则, policy=Twitter, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, tag=Google规则, policy=Google, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, tag=Bilibili, policy=BiliBili, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, tag=国内网站, policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, tag=国内网站, policy=DIRECT, update-interval=172800, opt-parser=true, enabled=true
 
 
 [Host]
