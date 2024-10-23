@@ -27,11 +27,11 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 [Remote Filter]
 Proxy= NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
-香港= NameRegex, FilterKey = .*(香港|Hong Kong|HK|hk)
-台湾= NameRegex, FilterKey = .*(台湾|Taiwan|TW|tw|台北)
-新加坡= NameRegex, FilterKey = .*(新加坡|Singapore|SG|sg)
-日本= NameRegex, FilterKey = .*(日本|Japan|JP|jp)
-美国= NameRegex, FilterKey = .*(美国|United States|US|us)
+美国 = NameRegex, FilterKey = "(?i)(美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US)"
+香港 = NameRegex, FilterKey = "(?i)(香港|港|hong|HK|HKG|🇭🇰)"
+日本 = NameRegex, FilterKey = "(?i)(日本|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan)"
+台湾 = NameRegex, FilterKey = "(?i)(台|台湾|TW|Taiwan)"
+新加坡 = NameRegex, FilterKey = "(?i)(狮城|新加坡|🇸🇬|SG|Singapore)"
 [Proxy Group]
 Eee= select,Proxies,Auto, US, HK, JP, TW, SG
 Proxies= select,Proxy
