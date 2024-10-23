@@ -120,15 +120,9 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 [Script]
 generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/check.js, timeout=300, tag=流媒体-解锁查询, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
 [Plugin]
-https://raw.githubusercontent.com/erdongchanyo/Rules/refs/heads/main/Loon/EDCstore.plugin, enabled=true
-https://github.com/VirgilClyne/iRingo/raw/main/plugin/Siri.plugin, enabled=true
 https://github.com/VirgilClyne/iRingo/raw/main/plugin/Location.plugin, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, tag=哔哩去广告, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Zhihu_remove_ads.plugin, tag=知乎去广告, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=REJECT, tag=Advertising (blackmatrix7, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=Redirect (blackmatrix7, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=Auto-HK, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, policy=Auto-HK, tag=Sub-Store, enabled=true
 
