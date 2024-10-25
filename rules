@@ -128,6 +128,7 @@ https://github.com/VirgilClyne/iRingo/raw/main/plugin/Location.plugin, enabled=t
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=REJECT, tag=Advertising (blackmatrix7, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=Redirect (blackmatrix7, enabled=true
 
+[MITM]
 hostname =
 ca-p12 = 
 ca-passphrase = 
