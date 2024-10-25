@@ -10,7 +10,7 @@ ipv6 = false
 # GeoIP 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
 # DNS
-dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
 # DoH
 doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
 # 跳过代理
