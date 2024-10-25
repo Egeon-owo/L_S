@@ -78,24 +78,32 @@ GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule]
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, policy=REJECT,  enabled=true
-https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf, tag=广告终结者, policy=REJECT,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, tag=Netflix 规则, policy=Netflix, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, tag=Disney 规则, policy=Disney+,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/HBO/HBO.list, tag=HBO 规则, policy=HBO,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, tag=TikTok 规则,policy=TikTok,enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list, tag=Spotify 规则,policy=Spotify, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon//YouTube/YouTube.list, tag=YouTube 规则, policy=YouTube,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list, tag=GlobalMedia 规则, policy=GlobalMedia,, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, tag=Telegram 规则, policy=Telegram,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/OpenAI/OpenAI.list, tag=OpenAI 规则, policy=OpenAI,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/PayPal/PayPal.list, tag=PayPal 规则, policy=PayPal,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list, tag=Microsoft 规则,policy=Microsoft,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, tag=Twitter规则, policy=Twitter,  enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, tag=Google规则, policy=Google, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, tag=Bilibili, policy=BiliBili, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list, policy=Apple, tag=Apple规则, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
+https://kelee.one/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/XunLei_remove_ads.plugin, enabled=true
+https://raw.githubusercontent.com/johnmillzer/tool/refs/heads/main/Plugin/wechat_bus_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Spotify_lyrics_translation.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Block_HTTPDNS.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/YoudaoDict_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/PinDuoDuo_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/QuarkBrowser_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Spotify_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Taobao_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/JD_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/DragonRead_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Amap_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/BaiduNetDisk_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Weixin_Official_Accounts_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/RedPaper_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/NeteaseCloudMusic_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Weibo_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled=true
+https://kelee.one/Tool/Loon/Plugin/Tieba_remove_ads.plugin, enabled=true
+https://github.com/VirgilClyne/iRingo/raw/main/plugin/Location.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=REJECT, tag=Advertising (blackmatrix7, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=Redirect (blackmatrix7, enabled=true
+
 
 [Host]
 
