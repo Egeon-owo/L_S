@@ -67,7 +67,7 @@ TikTok=select,  Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.co
 Spotify=select, Eee,US,  HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Spotify.png
 BiliBili=select, HK, TW, DIRECT,img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Bilibili.png
 Telegram=select, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Telegram.png
-AI=select,Eee, US, HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Robot.png
+AI=select,Eee, US, HK, JP, TW, SG,  img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
 Twitter=select, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Twitter.png
 PayPal=select, Eee,US, HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Paypal.png
 Google=select, Eee,US,  HK, JP, TW, SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Google.png
@@ -78,7 +78,7 @@ GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule]
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, policy=REJECT, tag=规则修正, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, policy=DIRECT, tag=规则修正, enabled=true
 https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf, policy=REJECT, tag=广告终结者, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=Netflix, tag=Netflix 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, policy=Disney+, tag=Disney 规则, enabled=true
@@ -95,7 +95,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list, policy=Microsoft, tag=Microsoft 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, policy=Twitter, tag=Twitter规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Google, tag=Google规则, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=BiliBili, tag=Bilibili, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=BiliBili规则, tag=Bilibili, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
 
 [Host]
