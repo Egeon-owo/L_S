@@ -1,5 +1,4 @@
 [General]
-[General]
 # 解析器
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
 #代理测速
