@@ -1,38 +1,44 @@
 [General]
-ip-mode = ipv4-only
-disable-stun = false
-dns-reject-mode = LoopbackIP
-domain-reject-mode = DNS
-udp-fallback-mode = REJECT
-sni-sniffing = true
-disconnect-on-policy-change = false
-switch-node-after-failure-times = 3
-# > 跳过某个域名或者IP段
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
-# > DNS 服务器
-dns-server = system
-interface-mode = auto
-# Wi-Fi 访问
-# > 允许 Wi-Fi 网络下其它设备访问
-#allow-udp-proxy = false
-allow-wifi-access = false
-wifi-access-http-port = 7222
-wifi-access-socks5-port = 7221
-# > 代理测速 URL
-proxy-test-url = http://www.google.com/generate_204
-internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
-# > 测速超时 (s)
-test-timeout = 5
-# > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器
-#real-ip = msftconnecttest.com,msftncsi.com,*.msftconnecttest.com,*.msftncsi.com,*.srv.nintendo.net,*.stun.playstation.net,xbox.*.microsoft.com,*.xboxlive.com,*.battlenet.com.cn,*.battlenet.com,*.blzstatic.cn,*.battle.net
 # 解析器
-resource-parser = https://gitlab.com/sub-store/Sub-Store/-/releases/permalink/latest/downloads/sub-store-parser.loon.min.js
-# geoip
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+#代理测速
+proxy-test-url = http://www.gstatic.com/generate_204
+#测速超时 (s)
+test-timeout = 3
+# IPv6 支持
+ipv6 = false
+# GeoIP 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
-# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
-# ssid-trigger="default":rule,"cellular":rule,"ASUS":direct,"TPLINK":proxy 
 ipasn-url = https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
+
+sni-sniffing = true
+# DNS
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
+# DoH
+doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+# 跳过代理
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
+# 旁路隧道
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
+# 允许 Wi-Fi 访问
+allow-udp-proxy = true
+allow-wifi-access = false
+wifi-access-http-port = 5208
+wifi-access-socks5-port = 5206
+# 将dns请求发往目标dns服务器
+real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, *.apple.com, *apple.com, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+# 接口模式
+interface-mode = auto
+# 失败后切换节点次数
+switch-node-after-failure-times = 3
+# 策略切换时关闭链接
+disconnect-on-policy-change = true
+# udp端口禁用
+disable-stun = true
+disable-udp-ports = 443
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
+# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
+
 
 [Proxy]
 
@@ -72,7 +78,7 @@ Microsoft=select,Eee,US, HK, JP, TW, SG,DIRECT, img-url=https://raw.githubuserco
 #GEOIP,CN,DIRECT
 FINAL,Eee
 
-[Remote Rule］
+[Remote Rule]
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list, policy=REJECT, tag=广告拦截, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=Netflix, tag=Netflix 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, policy=Disney+, tag=Disney 规则, enabled=true
