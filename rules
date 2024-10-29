@@ -1,44 +1,25 @@
 [General]
-# 解析器
-resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
-#代理测速
-proxy-test-url = http://www.gstatic.com/generate_204
-#测速超时 (s)
-test-timeout = 3
-# IPv6 支持
-ipv6 = false
-# GeoIP 数据库
-geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
-ipasn-url = https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
-
+ip-mode = ipv4-only
+dns-server = system
 sni-sniffing = true
-# DNS
-dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
-# DoH
-doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
-# 跳过代理
-skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
-# 旁路隧道
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
-# 允许 Wi-Fi 访问
-allow-udp-proxy = true
+disable-stun = false
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
 allow-wifi-access = false
-wifi-access-http-port = 5208
-wifi-access-socks5-port = 5206
-# 将dns请求发往目标dns服务器
-real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, *.apple.com, *apple.com, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
-# 接口模式
 interface-mode = auto
-# 失败后切换节点次数
+test-timeout = 5
+disconnect-on-policy-change = false
 switch-node-after-failure-times = 3
-# 策略切换时关闭链接
-disconnect-on-policy-change = true
-# udp端口禁用
-disable-stun = true
-disable-udp-ports = 443
-# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
-# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
-
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://detectportal.firefox.com/success.txt
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb
+ipasn-url = https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-ASN.mmdb
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 
 [Proxy]
 
@@ -75,11 +56,11 @@ Google=select, Eee,US,  HK, JP, TW, SG, img-url=https://raw.githubusercontent.co
 Microsoft=select,Eee,US, HK, JP, TW, SG,DIRECT, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Microsoft.png
 
 [Rule]
-#GEOIP,CN,DIRECT
+GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule]
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list, policy=REJECT, tag=广告拦截, enabled=true
+https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list, policy=REJECT, tag=广告拦截, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=Netflix, tag=Netflix 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, policy=Disney+, tag=Disney 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/HBO/HBO.list, policy=HBO, tag=HBO 规则, enabled=true
@@ -97,7 +78,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Google, tag=Google规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=BiliBili规则, tag=Bilibili, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Lan/Lan_Resolve.list, policy=DIRECT, tag=LAN, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6_Resolve.list, policy=DIRECT, tag=ChinaMax, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6_Resolve.list,policy=DIRECT, tag=ChinaMax, enabled=true
+
 
 
 [Host]
