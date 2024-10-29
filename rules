@@ -74,7 +74,7 @@ Google=select, Eee,US,  HK, JP, TW, SG, img-url=https://raw.githubusercontent.co
 Microsoft=select,Eee,US, HK, JP, TW, SG,DIRECT, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Microsoft.png
 
 [Rule]
-#GEOIP,CN,DIRECT
+GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule］
