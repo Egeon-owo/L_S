@@ -134,8 +134,7 @@ https://kelee.one/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/Weibo_remove_ads.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/Tieba_remove_ads.plugin, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, policy=REJECT, tag=Advertising (blackmatrix7, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=Redirect (blackmatrix7, enabled=true
+
 [MITM]
 hostname =
 ca-p12 = 
