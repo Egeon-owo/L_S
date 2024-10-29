@@ -74,7 +74,7 @@ Google=select, Eee,US,  HK, JP, TW, SG, img-url=https://raw.githubusercontent.co
 Microsoft=select,Eee,US, HK, JP, TW, SG,DIRECT, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Microsoft.png
 
 [Rule]
-GEOIP,CN,DIRECT
+#GEOIP,CN,DIRECT
 FINAL,Eee
 
 [Remote Rule］
@@ -95,8 +95,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Twitter/Twitter.list, policy=Twitter, tag=Twitter规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list, policy=Google, tag=Google规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=BiliBili规则, tag=Bilibili, enabled=true
-https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Loon/Lan/Lan_Resolve.list,policy=DIRECT, tag=LAN, enabled=true
-https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6_Resolve.list,policy=DIRECT, tag=ChinaMax, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/Lan/Lan_Resolve.list,policy=DIRECT, tag=LAN, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/ChinaMax/ChinaMax_No_IPv6_Resolve.list,policy=DIRECT, tag=ChinaMax, enabled=true
 
 
 [Host]
