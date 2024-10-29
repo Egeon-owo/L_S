@@ -4,7 +4,7 @@ resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/rele
 #代理测速
 proxy-test-url = http://www.gstatic.com/generate_204
 #测速超时 (s)
-test-timeout = 5
+test-timeout = 3
 # IPv6 支持
 ipv6 = false
 # GeoIP 数据库
