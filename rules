@@ -79,7 +79,6 @@ Microsoft=select,Eee,US, HK, JP, TW, SG,DIRECT, img-url=https://raw.githubuserco
 FINAL,Eee
 
 [Remote Rule]
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list, policy=REJECT, tag=去广告,enabled=true
 https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list, policy=REJECT, tag=广告拦截, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=Netflix, tag=Netflix 规则, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Disney/Disney.list, policy=Disney+, tag=Disney 规则, enabled=true
@@ -116,7 +115,6 @@ https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.
 https://kelee.one/Tool/Loon/Plugin/Remove_ads_by_keli.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/BlockAdvertisers.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/XunLei_remove_ads.plugin, enabled=true
-https://raw.githubusercontent.com/johnmillzer/tool/refs/heads/main/Plugin/wechat_bus_remove_ads.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/Spotify_lyrics_translation.plugin, enabled=true
 https://kelee.one/Tool/Loon/Plugin/YoudaoDict_remove_ads.plugin, enabled=true
